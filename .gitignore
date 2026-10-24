@@ -1,13 +1,12 @@
-# Python
+venv/
 .venv/
 __pycache__/
-*.pyc
+*.py[cod]
 
 # dbt
 target/
 dbt_packages/
 logs/
-.DS_Store
 
 # Local credentials
 profiles.yml
@@ -17,3 +16,7 @@ profiles.yml
 # IDE
 .vscode/
 .idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
