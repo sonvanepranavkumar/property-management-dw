@@ -1,0 +1,114 @@
+version: 2
+
+models:
+  - name: stg_properties
+    description: "Property staging model"
+    columns:
+      - name: property_id
+        data_tests:
+          - unique
+          - not_null
+      - name: property_name
+        data_tests:
+          - not_null
+
+  - name: stg_tenants
+    description: "Tenant staging model"
+    columns:
+      - name: tenant_id
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        data_tests:
+          - not_null
+      - name: last_name
+        data_tests:
+          - not_null
+
+  - name: stg_leases
+    description: "Lease staging model"
+    columns:
+      - name: lease_id
+        data_tests:
+          - unique
+          - not_null
+      - name: property_id
+        data_tests:
+          - not_null
+      - name: tenant_id
+        data_tests:
+          - not_null
+
+  - name: stg_rent_charges
+    description: "Rent charges staging model"
+    columns:
+      - name: charge_id
+        data_tests:
+          - unique
+          - not_null
+      - name: lease_id
+        data_tests:
+          - not_null
+      - name: amount_due
+        data_tests:
+          - not_null
+
+  - name: stg_rent_payments
+    description: "Rent payments staging model"
+    columns:
+      - name: payment_id
+        data_tests:
+          - unique
+          - not_null
+      - name: amount
+        data_tests:
+          - not_null
+      - name: payment_status
+        data_tests:
+          - not_null
+
+  - name: stg_payment_allocations
+    description: "Payment allocations staging model"
+    columns:
+      - name: allocation_id
+        data_tests:
+          - unique
+          - not_null
+      - name: payment_id
+        data_tests:
+          - not_null
+      - name: charge_id
+        data_tests:
+          - not_null
+      - name: allocated_amount
+        data_tests:
+          - not_null
+
+  - name: stg_expenses
+    description: "Property expenses staging model"
+    columns:
+      - name: expense_id
+        data_tests:
+          - unique
+          - not_null
+      - name: property_id
+        data_tests:
+          - not_null
+      - name: amount
+        data_tests:
+          - not_null
+
+  - name: stg_property_availability
+    description: "Property availability staging model"
+    columns:
+      - name: availability_id
+        data_tests:
+          - unique
+          - not_null
+      - name: property_id
+        data_tests:
+          - not_null
+      - name: is_available
+        data_tests:
+          - not_null
