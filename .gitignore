@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt
+target/
+dbt_packages/
+logs/
+.DS_Store
+
+# Local credentials
+profiles.yml
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
