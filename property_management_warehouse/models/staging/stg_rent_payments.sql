@@ -7,4 +7,4 @@ SELECT
     transaction_reference,
     created_at,
     updated_at
-FROM raw.rent_payments
+FROM {{ source('raw', 'rent_payments') }}

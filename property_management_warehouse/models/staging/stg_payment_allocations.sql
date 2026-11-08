@@ -5,4 +5,4 @@ SELECT
     allocated_amount,
     allocation_date,
     created_at
-FROM raw.payment_allocations
+FROM {{ source('raw', 'payment_allocations') }}

@@ -8,4 +8,4 @@ SELECT
     bedrooms,
     created_at,
     updated_at
-FROM raw.properties
+FROM {{ source('raw', 'properties') }}

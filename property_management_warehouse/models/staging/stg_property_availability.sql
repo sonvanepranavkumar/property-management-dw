@@ -6,4 +6,4 @@ SELECT
     is_available,
     availability_reason,
     created_at
-FROM raw.property_availability
+FROM {{ source('raw', 'property_availability') }}

@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: properties
+      - name: tenants
+      - name: leases
+      - name: rent_charges
+      - name: rent_payments
+      - name: payment_allocations
+      - name: expenses
+      - name: property_availability

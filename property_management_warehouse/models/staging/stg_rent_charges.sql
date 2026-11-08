@@ -8,4 +8,4 @@ SELECT
     charge_status,
     created_at,
     updated_at
-FROM raw.rent_charges
+FROM {{ source('raw', 'rent_charges') }}

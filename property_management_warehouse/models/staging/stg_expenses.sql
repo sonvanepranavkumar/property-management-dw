@@ -8,4 +8,4 @@ SELECT
     invoice_reference,
     created_at,
     updated_at
-FROM raw.expenses
+FROM {{ source('raw', 'expenses') }}

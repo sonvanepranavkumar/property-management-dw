@@ -10,4 +10,4 @@ SELECT
     lease_status,
     created_at,
     updated_at
-FROM raw.leases
+FROM {{ source('raw', 'leases') }}
