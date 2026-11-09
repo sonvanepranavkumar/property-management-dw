@@ -14,7 +14,17 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+vars:
+  # Reporting date used to calculate overdue rent and days overdue
+  # Leave as null to use today or override
+  # dbt build --vars '{as_of_date: "2026-02-28"}'
+  as_of_date: null
+
 models:
   property_management_warehouse:
     staging:
       +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

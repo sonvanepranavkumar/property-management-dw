@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fct_rent_charges
+    description: >
+      One row per rent charge containing its amount due, amount paid,
+      amount outstanding, collection status, overdue and on-time flags
+    columns:
+      - name: charge_id
+        data_tests:
+          - unique
+          - not_null
+      - name: property_id
+        data_tests:
+          - not_null
+      - name: rent_outstanding
+        data_tests:
+          - not_null
+      - name: collection_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['paid', 'partially_paid', 'unpaid', 'waived', 'cancelled']

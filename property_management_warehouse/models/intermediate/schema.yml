@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: int_rent_charge_payments
+    description: "Total amount paid against each rent charge from successful payments only"
+    columns:
+      - name: charge_id
+        data_tests:
+          - unique
+          - not_null
+      - name: amount_paid
+        data_tests:
+          - not_null
