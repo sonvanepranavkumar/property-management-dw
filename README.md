@@ -1,6 +1,6 @@
 # Property Management Data Warehouse
 
-An end to end data warehouse project built using PostgreSQL, dbt and SQL to model and analyse rental income, rent payments and property performance data orchestrated with Apache Airflow and run in Docker.
+An end to end data warehouse project built using PostgreSQL, dbt and SQL to model and analyse rental income, rent payments and property performance data. The pipeline is orchestrated with Apache Airflow and runs in Docker.
 
 ## Features
 
