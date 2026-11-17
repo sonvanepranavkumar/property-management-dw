@@ -10,6 +10,8 @@ logs/
 
 # Local credentials
 profiles.yml
+# Reads credentials from environment variables
+!airflow/dbt_profiles/profiles.yml
 .env
 .env.*
 

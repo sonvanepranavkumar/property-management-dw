@@ -17,7 +17,7 @@ clean-targets:
 vars:
   # Reporting date used to calculate overdue rent and days overdue
   # Leave as null to use today or override
-  # dbt build --vars '{as_of_date: "2026-02-28"}'
+  # dbt build --vars '{as_of_date: "YYYY-MM-DD"}'
   as_of_date: null
 
 models:
