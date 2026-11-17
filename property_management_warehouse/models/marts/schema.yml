@@ -10,9 +10,27 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: lease_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_leases')
+                field: lease_id
+      - name: tenant_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_tenants')
+                field: tenant_id
       - name: property_id
         data_tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_properties')
+                field: property_id
       - name: rent_outstanding
         data_tests:
           - not_null
@@ -22,3 +40,25 @@ models:
           - accepted_values:
               arguments:
                 values: ['paid', 'partially_paid', 'unpaid', 'waived', 'cancelled']
+  
+  - name: dim_properties
+    description: "One row per property"
+    columns:
+      - name: property_id
+        data_tests:
+          - unique
+          - not_null
+      - name: property_name
+        data_tests:
+          - not_null
+
+  - name: dim_tenants
+    description: "One row per tenant"
+    columns:
+      - name: tenant_id
+        data_tests:
+          - unique
+          - not_null
+      - name: full_name
+        data_tests:
+          - not_null
